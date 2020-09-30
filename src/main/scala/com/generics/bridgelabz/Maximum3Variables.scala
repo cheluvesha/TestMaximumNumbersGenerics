@@ -22,4 +22,14 @@ class Maximum3Variables {
     }
     maxNumber
   }
+  def maximumOf3NumbersString(firstString:String,secondString:String,thirdString:String): String ={
+    var maxString = firstString
+    if(secondString.compareTo(firstString) > 0 && secondString.compareTo(thirdString) > 0) {
+      maxString = secondString
+    }
+    if(thirdString.compareTo(firstString) > 0 && thirdString.compareTo(secondString) > 0) {
+      maxString = thirdString
+    }
+    maxString
+  }
 }

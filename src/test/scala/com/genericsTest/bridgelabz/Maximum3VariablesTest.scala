@@ -34,5 +34,18 @@ class Maximum3VariablesTest extends FunSuite {
     val maximum3Variables  = new  Maximum3Variables()
     assert(maximum3Variables.maximumOf3NumbersFloat(4.2f,8.2f,9.2f) === 9.2f)
   }
+  test("MaximumStringInputStringAtFirstFollowedBySecondAndThirdInput_ReturnFirstInputAsMaximum"){
+    val maximum3Variables = new  Maximum3Variables()
+    assert(maximum3Variables.maximumOf3NumbersString("Peach","Banana","Apple") === "Peach")
+  }
 
+  test("MaximumStringInputStringAtSecondFollowedByFirstAndThirdInput_ReturnSecondInputAsMaximum") {
+    val maximum3Variables = new  Maximum3Variables()
+    assert(maximum3Variables.maximumOf3NumbersString("Code","Song","Rat") === "Song")
+  }
+
+  test("MaximumStringInputNumberatThirdFollowedByFirstAndSecondInput_ReturnThirdInputAsMaximum") {
+    val maximum3Variables = new  Maximum3Variables()
+    assert(maximum3Variables.maximumOf3NumbersString("Apple","Cat","Dog") === "Dog")
+  }
 }
