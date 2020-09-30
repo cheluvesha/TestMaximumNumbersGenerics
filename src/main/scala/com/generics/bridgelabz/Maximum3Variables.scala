@@ -1,35 +1,21 @@
 package com.generics.bridgelabz
 
-class Maximum3Variables {
+import Ordering.Implicits._
+class Maximum3Variables[T:Ordering](var type1:T, var type2:T, var type3:T){
+  val first = type1
+  val second = type2
+  val third = type3
 
-  def maximumOf3NumbersInt(firstNumber:Int,secondNumber:Int,thirdNumber:Int): Int ={
-    var maxNumber = firstNumber
-    if(secondNumber.compareTo(firstNumber) == 1 && secondNumber.compareTo(thirdNumber)== 1) {
-      maxNumber = secondNumber
-    }
-    if(thirdNumber.compareTo(firstNumber) == 1 && thirdNumber.compareTo(secondNumber)== 1) {
-      maxNumber = thirdNumber
-    }
-    maxNumber
+  def this() {
+    this(0.asInstanceOf[T],1.asInstanceOf[T],2.asInstanceOf[T])
   }
-  def maximumOf3NumbersFloat(firstNumber:Float,secondNumber:Float,thirdNumber:Float): Float ={
-    var maxNumber = firstNumber
-    if(secondNumber.compareTo(firstNumber) == 1 && secondNumber.compareTo(thirdNumber)== 1) {
-      maxNumber = secondNumber
-    }
-    if(thirdNumber.compareTo(firstNumber) == 1 && thirdNumber.compareTo(secondNumber)== 1) {
-      maxNumber = thirdNumber
-    }
-    maxNumber
+
+  def maximumOf3Variables[T](): T = {
+    var maxParam = first
+    maxParam = compare(maxParam,second)
+    maxParam = compare(maxParam,third)
+    return maxParam.asInstanceOf[T]
   }
-  def maximumOf3NumbersString(firstString:String,secondString:String,thirdString:String): String ={
-    var maxString = firstString
-    if(secondString.compareTo(firstString) > 0 && secondString.compareTo(thirdString) > 0) {
-      maxString = secondString
-    }
-    if(thirdString.compareTo(firstString) > 0 && thirdString.compareTo(secondString) > 0) {
-      maxString = thirdString
-    }
-    maxString
-  }
+
+  def compare[T : Ordering](first: T, second: T) : T = if(first > second) first else second
 }
