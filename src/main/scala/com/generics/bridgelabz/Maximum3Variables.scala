@@ -12,4 +12,14 @@ class Maximum3Variables {
     }
     maxNumber
   }
+  def maximumOf3NumbersFloat(firstNumber:Float,secondNumber:Float,thirdNumber:Float): Float ={
+    var maxNumber = firstNumber
+    if(secondNumber.compareTo(firstNumber) == 1 && secondNumber.compareTo(thirdNumber)== 1) {
+      maxNumber = secondNumber
+    }
+    if(thirdNumber.compareTo(firstNumber) == 1 && thirdNumber.compareTo(secondNumber)== 1) {
+      maxNumber = thirdNumber
+    }
+    maxNumber
+  }
 }
