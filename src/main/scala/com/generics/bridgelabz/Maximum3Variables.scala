@@ -14,6 +14,7 @@ class Maximum3Variables[T:Ordering](var type1:T, var type2:T, var type3:T){
     var max = first
     max = compare(max,second)
     max = compare(max,third)
+    println("Maximum Value is : "+max)
     return max.asInstanceOf[T]
   }
 
