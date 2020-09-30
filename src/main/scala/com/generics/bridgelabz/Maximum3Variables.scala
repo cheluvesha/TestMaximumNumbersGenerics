@@ -11,10 +11,10 @@ class Maximum3Variables[T:Ordering](var type1:T, var type2:T, var type3:T){
   }
 
   def maximumOf3Variables[T](): T = {
-    var maxParam = first
-    maxParam = compare(maxParam,second)
-    maxParam = compare(maxParam,third)
-    return maxParam.asInstanceOf[T]
+    var max = first
+    max = compare(max,second)
+    max = compare(max,third)
+    return max.asInstanceOf[T]
   }
 
   def compare[T : Ordering](first: T, second: T) : T = if(first > second) first else second
