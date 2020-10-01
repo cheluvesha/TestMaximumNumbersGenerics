@@ -17,5 +17,5 @@ class Maximum3Variables[T:Ordering](var type1:T, var type2:T, var type3:T){
     return max.asInstanceOf[T]
   }
 
-  def compare[T : Ordering](first: T, second: T) : T = if(first > second) first else second
+  def compare[T : Ordering](firstType: T, secondType: T) : T = if(firstType > secondType) firstType else secondType
 }
